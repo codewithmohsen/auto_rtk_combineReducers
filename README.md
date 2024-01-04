@@ -76,7 +76,7 @@ enjoy! 🥰
 
 /src/app/user/page.tsx => view user feature in localhost:3000/user
 
-### simpleStore
+### _simpleStore_
 
 ```
 import { configureStore } from '@reduxjs/toolkit';
@@ -97,7 +97,7 @@ export type AppDispatch = typeof store.dispatch;
 
 ```
 
-### _smartStore_ (store and rootReducer)
+### _smartStore_
 
 ```
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
