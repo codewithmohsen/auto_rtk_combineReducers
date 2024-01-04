@@ -1,9 +1,9 @@
 'use client';
-import { useGetAllQuery } from "./user.slice";
+import { useGetAllUsersQuery } from "./user.slice";
 import React from "react";
 
 const Page = () => {
-    const { data, error, isLoading, refetch } = useGetAllQuery(undefined);
+    const { data, error, isLoading, refetch } = useGetAllUsersQuery(undefined);
     return (
         <div>
             <h2>Users</h2>

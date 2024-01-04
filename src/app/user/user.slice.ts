@@ -1,13 +1,14 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-export const user = createApi({
+export const userSlice = createApi({
 	reducerPath: 'user',
 	baseQuery: fetchBaseQuery({ baseUrl: 'https://jsonplaceholder.typicode.com/' }),
 	endpoints: (builder) => ({
-		getAll: builder.query({
+		getAllUsers: builder.query({
 			query: () => 'users',
 		}),
 	}),
 });
 
-export const { useGetAllQuery } = user;
+export const { useGetAllUsersQuery } = userSlice;
+export default userSlice.reducer;

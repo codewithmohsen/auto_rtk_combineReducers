@@ -1,6 +1,6 @@
 'use client';
-import { store } from './simpleStore';
-// import { store } from './smartStore';
+// import { store } from './simpleStore';
+import { store } from './smartStore';
 import { Provider } from 'react-redux';
 import { QueryClient, QueryClientProvider, useQuery } from 'react-query';
 const queryClient = new QueryClient();
