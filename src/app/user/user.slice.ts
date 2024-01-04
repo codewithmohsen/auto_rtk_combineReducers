@@ -11,4 +11,5 @@ export const userSlice = createApi({
 });
 
 export const { useGetAllUsersQuery } = userSlice;
+export const middleware = userSlice.middleware;
 export default userSlice.reducer;

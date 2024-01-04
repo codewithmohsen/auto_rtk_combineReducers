@@ -4,10 +4,17 @@ import postReducer from './post/post.slice';
 import { userSlice } from './user/user.slice';
 
 const context = require.context('./', true, /\.slice\.ts$/i);
-const reducers = context.keys().reduce((acc: any, key) => {
+
+let reducers: any = [];
+let middlewares: any = [];
+
+context.keys().reduce((acc: any, key) => {
 	const reducerNamePattern = /([^\/]+)$/;
 	const reducerName = key.match(reducerNamePattern)?.toString().split('.')[0] as string;
-	acc[reducerName] = context(key).default;
+	reducers[reducerName] = context(key).default;
+	if (context(key).middleware) {
+		middlewares.push(context(key).middleware);
+	}
 	return acc;
 }, {});
 
@@ -19,9 +26,9 @@ export const store = configureStore({
 	// 	[userSlice.reducerPath]: userSlice.reducer,
 	// },
 
-	/* jshint ignore:start */
-	middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(userSlice.middleware),
-	/* jshint ignore:end */
+	// @ts-ignore: Unreachable code error
+	middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(middlewares),
+	// middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(userSlice.middleware),
 });
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
