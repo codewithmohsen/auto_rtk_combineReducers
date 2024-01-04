@@ -122,15 +122,9 @@ context.keys().reduce((acc: any, key) => {
 
 export const store = configureStore({
 	reducer: combineReducers(reducers),
-	// reducer: {
-	// 	counter: counterReducer,
-	// 	post: postReducer,
-	// 	[userSlice.reducerPath]: userSlice.reducer,
-	// },
 
 	// @ts-ignore: Unreachable code error
 	middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(middlewares),
-	// middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(userSlice.middleware),
 });
 
 export type RootState = ReturnType<typeof store.getState>;
