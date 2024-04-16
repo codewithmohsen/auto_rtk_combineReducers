@@ -1,6 +1,5 @@
 # What
-
-> Find **all reducers** in your **Redux Toolkit** project inside whole **[YOUR_OPTIONAL_NAME].slice.ts** files like my **Smart Store**. 😎
+> Find **all reducers** in your **Redux Toolkit** project inside whole **[YOUR_OPTIONAL_NAME].slice.ts** files by **smart store**. 
 
 ## IMPORTANT NOTES
 
